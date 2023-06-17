@@ -42,7 +42,7 @@ public class Tests extends BaseClass {
         displayOrderAmount("//div[@class='_30jeq3 _16Jk6d']");
         elementClick("//ul[@class='row']/li/button[text()='Add to cart']");
         elementClick("//ul[@class='row']/li/button[text()='Add to cart']");
-        elementClick("//div[@class='_1psGvi']//span");
+        elementClick("//div[@class='go_DOp'][3]//span");
         takeScreenShot();
         verifyCart("//div[@class='zab8Yh _10k93p']");
         printPrice("//div[@class='_1dqRvU']//span", 2);
