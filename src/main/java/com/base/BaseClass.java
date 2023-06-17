@@ -73,9 +73,9 @@ public class BaseClass {
         try {
             Thread.sleep(5000);
         } catch (NoSuchWindowException e) {
-            System.out.println(e);
+
         } catch (InterruptedException e) {
-			e.printStackTrace();
+
 		}
     }
 
