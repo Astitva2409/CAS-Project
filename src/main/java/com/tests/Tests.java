@@ -30,10 +30,10 @@ public class Tests extends BaseClass {
         displayOrderAmount("//div[@class='_30jeq3 _16Jk6d']");
         elementClick("//ul[@class='row']/li/button[text()='Add to cart']");
         elementClick("//ul[@class='row']/li/button[text()='Add to cart']");
-        elementClick("//div[@class='_1dqRvU']//span");
+        elementClick("//a[@class='_3SkBxJ']//span");
         takeScreenShot();
         verifyCart("//div[@class='zab8Yh _10k93p']");
-        printPrice("//div[@class='z4Ha90']/span/div/div/div[2]/span", 2);
+        printPrice("//div[@class='_1dqRvU']//span", 2);
         closeBrowser();
         quitBrowser();
     }
