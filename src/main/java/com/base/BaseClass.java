@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
@@ -69,14 +70,11 @@ public class BaseClass {
     }
 
     public void elementClick(String xpath) {
-        driver.findElement(By.xpath(xpath)).click();
         try {
-            Thread.sleep(5000);
-        } catch (NoSuchWindowException e) {
+            driver.findElement(By.xpath(xpath)).click();
+        } catch (NoSuchElementException e) {
 
-        } catch (InterruptedException e) {
-
-		}
+        }
     }
 
     public void enterText(String name, String data) {

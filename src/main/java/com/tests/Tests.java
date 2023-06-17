@@ -2,10 +2,13 @@ package com.tests;
 
 import java.io.IOException;
 
+import org.openqa.selenium.StaleElementReferenceException;
 import org.testng.annotations.Test;
 import com.base.BaseClass;
 
 public class Tests extends BaseClass {
+    boolean result = false;
+    int attempt = 0;
     @Test
     public void test() throws IOException {
         invokeBrowser();
@@ -19,13 +22,22 @@ public class Tests extends BaseClass {
         displayOrderAmount("//div[@class='_30jeq3 _16Jk6d']");
         elementClick("//ul[@class='row']/li/button[text()='Add to cart']");
         takeScreenShot();
-        printPrice("//div[@class='z4Ha90']/span/div/div/div[2]/span", 1);
+        printPrice("//div[@class='_1dqRvU']//span", 1);
         closeBrowser();
         switchWindowHome();
         clearText();
         enterText("q", "Laptops");
         elementClick("//button[@type='submit']");
-        switchWindowProduct("//div[@class='_2kHMtA']", 5);
+        while (attempt < 2) {
+            try {
+                switchWindowProduct("//div[@class='_2kHMtA']", 5);
+                result = true;
+                break;
+            } catch (StaleElementReferenceException e) {
+
+            }
+            attempt++;
+        }
         verifyHomePage();
         displayOrderAmount("//div[@class='_30jeq3 _16Jk6d']");
         elementClick("//ul[@class='row']/li/button[text()='Add to cart']");
