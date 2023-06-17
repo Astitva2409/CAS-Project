@@ -3,7 +3,7 @@
 
 	<test name="Test">
 		<classes>			
-			<class name="testCases.AllTestCases" />
+			<class name="com.tests.Tests" />
 		</classes>
 	</test>
 
